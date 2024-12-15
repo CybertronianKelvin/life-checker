@@ -1,0 +1,50 @@
+<div class="container mx-auto mt-10 px-4">
+  <h1 class="text-center text-3xl font-semibold mb-6">Lifestyle Questions</h1>
+  <%= form_with url: questions_submit_path, class: "space-y-6", novalidate: true, local: true do |f| %>
+    <%= hidden_field_tag :age, @age %>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Do you drink on more than 2 days a week?</label>
+      <div class="flex items-center space-x-4 mt-2">
+        <div>
+          <%= f.radio_button :drink, "1", class: "form-radio text-green-500" %>
+          <%= f.label :drink_1, "Yes", class: "ml-2 text-lg" %>
+        </div>
+        <div>
+          <%= f.radio_button :drink, "0", class: "form-radio text-red-500" %>
+          <%= f.label :drink_0, "No", class: "ml-2 text-lg" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Do you smoke?</label>
+      <div class="flex items-center space-x-4 mt-2">
+        <div>
+          <%= f.radio_button :smoke, "1", class: "form-radio text-green-500" %>
+          <%= f.label :smoke_1, "Yes", class: "ml-2 text-lg" %>
+        </div>
+        <div>
+          <%= f.radio_button :smoke, "0", class: "form-radio text-red-500" %>
+          <%= f.label :smoke_0, "No", class: "ml-2 text-lg" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Do you exercise more than 1 hour per week?</label>
+      <div class="flex items-center space-x-4 mt-2">
+        <div>
+          <%= f.radio_button :exercise, "1", class: "form-radio text-green-500" %>
+          <%= f.label :exercise_1, "Yes", class: "ml-2 text-lg" %>
+        </div>
+        <div>
+          <%= f.radio_button :exercise, "0", class: "form-radio text-red-500" %>
+          <%= f.label :exercise_0, "No", class: "ml-2 text-lg" %>
+        </div>
+      </div>
+    </div>
+
+    <%= f.submit "Submit", class: "w-full bg-green text-white py-3 rounded-md shadow hover:bg-green shadow-[0_4px_0_#00401e] font-semibold" %>
+  <% end %>
+</div>

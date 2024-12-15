@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LifeStyle Checker</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <header class="bg-blue">
+      <nav class="mx-auto flex items-center p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5 no-underline">
+            <span class="h-8 w-auto text-center text-2xl bg-white p-1 text-blue-600 italic font-bold text-blue uppercase">LifeStyle Checker</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <% if flash[:error] %>
+      <div class="bg-red text-white border border-red p-4 mb-4">
+        <%= flash[:error] %>
+      </div>
+    <% elsif flash[:notice] %>
+      <div class="bg-green text-white border border-green p-4 mb-4">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <main class="container mx-auto mt-10 px-5 flex items-center justify-center">
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<h1>Scoring Rules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Age Range</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Threshold</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scoring_rules.each do |rule| %>
+      <tr>
+        <td><%= rule.age_min %> - <%= rule.age_max %></td>
+        <td><%= rule.q1 %></td>
+        <td><%= rule.q2 %></td>
+        <td><%= rule.q3 %></td>
+        <td><%= rule.threshold %></td>
+        <td><%= link_to 'Edit', edit_admin_scoring_rule_path(rule) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<div class="flex items-center justify-center bg-gray-100">
+  <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+    <h1 class="text-center text-2xl font-semibold mb-6">Patient Validation</h1>
+    <%= form_with url: patients_validate_path, class: "space-y-4", novalidate: true, local: true do |f| %>
+      <div class="flex flex-col mb-3">
+        <%= f.label :nhs_number, "NHS Number", class: "block font-medium text-gray-700 mb-1" %>
+        <%= f.text_field :nhs_number, class: "form-input w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500", required: true %>
+      </div>
+      <div class="flex flex-col mb-3">
+        <%= f.label :surname, "Surname", class: "block font-medium text-gray-700 mb-1" %>
+        <%= f.text_field :surname, class: "form-input w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500", required: true %>
+      </div>
+      <div class="flex flex-col mb-3">
+        <%= f.label :dob, "Date of Birth", class: "block font-medium text-gray-700 mb-1" %>
+        <%= f.date_field :dob, class: "form-input w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500", required: true %>
+      </div>
+      <div>
+        <%= f.submit "Validate", class: "w-full bg-green text-white py-3 rounded-md shadow hover:bg-green shadow-[0_4px_0_#00401e] font-semibold" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
