@@ -77,4 +77,3 @@ end
 
 gem "tailwindcss-rails", "~> 3.0"
 gem "tailwindcss-ruby", "3.4.13"
-gem "devise"

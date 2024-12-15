@@ -1,4 +1,4 @@
-# Rails on Replit
+# How to run the project
 
 This is a template to get you started with Rails on Replit. It's ready to go so you can just hit run and start coding!
 
@@ -8,7 +8,7 @@ This template was generated using `rails new` (after you install the `rails` gem
 - allow `*.repl.co` hosts (see `config/environments/development.rb`)
 - allow the app to be iframed on `replit.com` (see `config/application.rb`)
 
-## Running the app
+## Install 
 
 Simply hit run! You can edit the run command from the `.replit` file.
 

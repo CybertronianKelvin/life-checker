@@ -16,10 +16,8 @@ class ScoringService
   def calculate_score
     group_rules = find_rules_for_age
 
-    # Safeguard: Ensure group_rules is not nil
     return 0 unless group_rules
-
-    # Calculate the score based on the rules for drink, smoke, and exercise
+    
     group_rules[:drink] * @answers[:drink].to_i +
       group_rules[:smoke] * @answers[:smoke].to_i +
       group_rules[:exercise] * (1 - @answers[:exercise].to_i)
@@ -28,7 +26,6 @@ class ScoringService
   private
 
   def find_rules_for_age
-    # Safeguard: Ensure we return a valid rule or nil
     rule = SCORING_RULES[:age_groups].find { |range, _| range.include?(@age) }
     rule ? rule.last : nil
   end

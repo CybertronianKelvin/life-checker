@@ -70,5 +70,5 @@ Rails.application.configure do
 
   # Allow hosting on *.replit.dev hosts
   config.hosts << /.*\.replit.dev/
-  config.web_console.whitelisted_ips = '10.83.5.24'
+  config.web_console.whitelisted_ips = '10.82.2.21'
 end
